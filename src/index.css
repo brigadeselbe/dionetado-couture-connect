@@ -45,6 +45,10 @@ All colors MUST be HSL.
     --gold-foreground: 25 15% 15%;
 
     --radius: 0.5rem;
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 

@@ -41,7 +41,7 @@ export const ServicesSection = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
-            <Card key={index} className="text-center hover:shadow-warm transition-all duration-300 border-border/50 hover:border-accent/50">
+            <Card key={index} className="text-center hover:shadow-warm transition-all duration-300 border-border/50 hover:border-accent/50 hover:scale-105 animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
               <CardContent className="p-8">
                 <div className="w-16 h-16 bg-gradient-accent rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
                   <service.icon className="w-8 h-8 text-white" />

@@ -21,12 +21,12 @@ export const HeroSection = () => {
         <div className="max-w-4xl mx-auto">
           {/* Logo/Brand */}
           <div className="mb-8">
-            <h1 className="text-6xl md:text-8xl font-bold mb-4 tracking-wide">
+            <h1 className="text-6xl md:text-8xl font-bold mb-4 tracking-wide animate-logo-glow">
               DIONETADO
             </h1>
-            <div className="h-1 w-32 bg-gold mx-auto mb-6"></div>
-            <p className="text-xl md:text-2xl font-light tracking-wider opacity-90">
-              Couture Traditionnelle d'Excellence
+            <div className="h-1 w-32 bg-gold mx-auto mb-6 animate-pulse"></div>
+            <p className="text-xl md:text-2xl font-light tracking-wider opacity-90 animate-fade-in">
+              Couture Moderne d'Excellence
             </p>
           </div>
 
@@ -38,26 +38,26 @@ export const HeroSection = () => {
             </p>
             
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-gold/20 rounded-full flex items-center justify-center mx-auto mb-2">
+              <div className="text-center animate-slide-in-left" style={{ animationDelay: '0.2s' }}>
+                <div className="w-16 h-16 bg-gold/20 rounded-full flex items-center justify-center mx-auto mb-2 hover:animate-float">
                   <Scissors className="w-8 h-8 text-gold" />
                 </div>
                 <p className="text-sm">Couture Traditionnelle</p>
               </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-gold/20 rounded-full flex items-center justify-center mx-auto mb-2">
+              <div className="text-center animate-fade-in" style={{ animationDelay: '0.4s' }}>
+                <div className="w-16 h-16 bg-gold/20 rounded-full flex items-center justify-center mx-auto mb-2 hover:animate-float">
                   <Sparkles className="w-8 h-8 text-gold" />
                 </div>
                 <p className="text-sm">Prêt-à-porter</p>
               </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-gold/20 rounded-full flex items-center justify-center mx-auto mb-2">
+              <div className="text-center animate-fade-in" style={{ animationDelay: '0.6s' }}>
+                <div className="w-16 h-16 bg-gold/20 rounded-full flex items-center justify-center mx-auto mb-2 hover:animate-float">
                   <Scissors className="w-8 h-8 text-gold" />
                 </div>
                 <p className="text-sm">Accessoires</p>
               </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-gold/20 rounded-full flex items-center justify-center mx-auto mb-2">
+              <div className="text-center animate-slide-in-right" style={{ animationDelay: '0.8s' }}>
+                <div className="w-16 h-16 bg-gold/20 rounded-full flex items-center justify-center mx-auto mb-2 hover:animate-float">
                   <Sparkles className="w-8 h-8 text-gold" />
                 </div>
                 <p className="text-sm">Tissus Premium</p>
@@ -85,11 +85,11 @@ export const HeroSection = () => {
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="gold" size="lg" className="text-lg px-8 py-3">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style={{ animationDelay: '1s' }}>
+            <Button variant="gold" size="lg" className="text-lg px-8 py-3 hover:scale-105 transition-transform">
               Découvrir nos créations
             </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 py-3 border-gold text-gold hover:bg-gold hover:text-gold-foreground">
+            <Button variant="outline" size="lg" className="text-lg px-8 py-3 border-gold text-gold hover:bg-gold hover:text-gold-foreground hover:scale-105 transition-transform">
               Nous contacter
             </Button>
           </div>
