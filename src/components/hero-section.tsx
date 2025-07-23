@@ -26,15 +26,15 @@ export const HeroSection = () => {
             </h1>
             <div className="h-1 w-32 bg-gold mx-auto mb-6 animate-pulse"></div>
             <p className="text-xl md:text-2xl font-light tracking-wider opacity-90 animate-fade-in">
-              Couture Moderne d'Excellence
+              Innovation & Tradition • Couture Moderne
             </p>
           </div>
 
           {/* Services */}
           <div className="mb-12">
             <p className="text-lg md:text-xl mb-8 opacity-80 max-w-2xl mx-auto leading-relaxed">
-              Découvrez l'art de la couture traditionnelle africaine, 
-              alliant savoir-faire ancestral et élégance contemporaine.
+              L'art de la couture africaine revisité avec une approche moderne et innovante. 
+              Techniques contemporaines, designs avant-gardistes, finitions impeccables.
             </p>
             
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">

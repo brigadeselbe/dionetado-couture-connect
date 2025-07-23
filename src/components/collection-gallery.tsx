@@ -6,8 +6,30 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
+import { CollectionModal } from "./collection-modal";
+import { useState } from "react";
+
+interface CollectionItem {
+  id: number;
+  image: string;
+  title: string;
+  category: string;
+  description: string;
+}
 
 export const CollectionGallery = () => {
+  const [selectedItem, setSelectedItem] = useState<CollectionItem | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleItemClick = (item: CollectionItem) => {
+    setSelectedItem(item);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedItem(null);
+  };
   const collections = [
     {
       id: 1,
@@ -107,7 +129,10 @@ export const CollectionGallery = () => {
               {collections.map((item) => (
                 <CarouselItem key={item.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
                   <div className="p-2">
-                    <Card className="group hover:shadow-2xl transition-all duration-500 border-border/50 hover:border-accent/30 overflow-hidden animate-slide-in-left">
+                    <Card 
+                      className="group hover:shadow-2xl transition-all duration-500 border-border/50 hover:border-accent/30 overflow-hidden animate-slide-in-left cursor-pointer"
+                      onClick={() => handleItemClick(item)}
+                    >
                       <CardContent className="p-0">
                         <div className="relative overflow-hidden">
                           <img 
@@ -116,6 +141,11 @@ export const CollectionGallery = () => {
                             className="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110"
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div className="bg-white/20 backdrop-blur-sm rounded-full p-3">
+                              <span className="text-white font-semibold text-sm">Cliquer pour voir</span>
+                            </div>
+                          </div>
                           <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                             <span className="inline-block bg-gold/90 text-gold-foreground px-2 py-1 rounded text-xs font-medium mb-2">
                               {item.category}
@@ -158,6 +188,12 @@ export const CollectionGallery = () => {
             </div>
           </div>
         </div>
+        
+        <CollectionModal
+          item={selectedItem}
+          isOpen={isModalOpen}
+          onClose={handleCloseModal}
+        />
       </div>
     </section>
   );

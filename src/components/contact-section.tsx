@@ -67,10 +67,10 @@ export const ContactSection = () => {
             <CardContent>
               <div className="space-y-2 mb-4">
                 <p className="text-sm">
-                  <span className="font-medium">Lun - Ven:</span> 8h - 19h
+                  <span className="font-medium">Lun - Ven:</span> 10h30 - 20h30
                 </p>
                 <p className="text-sm">
-                  <span className="font-medium">Samedi:</span> 9h - 18h
+                  <span className="font-medium">Samedi:</span> 10h30 - 20h30
                 </p>
                 <p className="text-sm">
                   <span className="font-medium">Dimanche:</span> Sur rendez-vous
