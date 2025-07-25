@@ -21,9 +21,13 @@ export const HeroSection = () => {
         <div className="max-w-4xl mx-auto">
           {/* Logo/Brand */}
           <div className="mb-8">
-            <h1 className="text-6xl md:text-8xl font-bold mb-4 tracking-wide animate-logo-glow">
-              DIONETADO
-            </h1>
+            <div className="mb-6 flex justify-center">
+              <img 
+                src="/lovable-uploads/caf986f2-f6bc-4871-b2c0-6128dea3bd82.png"
+                alt="Logo DIONETADO"
+                className="h-32 md:h-40 object-contain animate-float filter drop-shadow-2xl"
+              />
+            </div>
             <div className="h-1 w-32 bg-gold mx-auto mb-6 animate-pulse"></div>
             <p className="text-xl md:text-2xl font-light tracking-wider opacity-90 animate-fade-in">
               Innovation & Tradition • Couture Moderne
