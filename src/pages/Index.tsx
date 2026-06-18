@@ -4,6 +4,7 @@ import { HeroSection } from "@/components/hero-section";
 import { ServicesSection } from "@/components/services-section";
 import { CollectionGallery } from "@/components/collection-gallery";
 import { TestimonialsSection } from "@/components/testimonials-section";
+import { VideosSection } from "@/components/videos-section";
 import { ContactSection } from "@/components/contact-section";
 import { Footer } from "@/components/footer";
 
@@ -15,6 +16,7 @@ const Index = () => {
       <ServicesSection />
       <CollectionGallery />
       <TestimonialsSection />
+      <VideosSection />
       <ContactSection />
       <Footer />
       <WhatsAppFab />
