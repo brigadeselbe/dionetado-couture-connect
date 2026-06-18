@@ -98,6 +98,7 @@ export const ServicesSection = () => {
 
   return (
     <section
+      id="services"
       className="py-28 relative overflow-hidden"
       style={{ background: "hsl(0 0% 97%)" }}
     >
