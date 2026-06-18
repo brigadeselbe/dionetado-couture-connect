@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/navbar";
 import { WhatsAppFab } from "@/components/whatsapp-fab";
+import { ScrollToTop } from "@/components/scroll-to-top";
 import { HeroSection } from "@/components/hero-section";
 import { ServicesSection } from "@/components/services-section";
 import { CollectionGallery } from "@/components/collection-gallery";
@@ -20,6 +21,7 @@ const Index = () => {
       <ContactSection />
       <Footer />
       <WhatsAppFab />
+      <ScrollToTop />
     </div>
   );
 };
