@@ -33,70 +33,70 @@ export const CollectionGallery = () => {
   const collections = [
     {
       id: 1,
-      image: "/lovable-uploads/8a78fc0f-a6c5-4572-9945-16aa5701c189.png",
+      image: "/images/collection-01-elegance-rose.png",
       title: "Élégance Rose",
       category: "Femme",
       description: "Tenue traditionnelle avec motifs délicats"
     },
     {
       id: 2,
-      image: "/lovable-uploads/b33460d5-ed23-4ba2-a806-067d1e2b7d1a.png",
+      image: "/images/collection-02-majeste-coloree.png",
       title: "Majesté Colorée",
       category: "Femme",
       description: "Robe majestueuse aux couleurs vives"
     },
     {
       id: 3,
-      image: "/lovable-uploads/a9fdf38a-8eeb-4767-aed2-284edaf8b078.png",
+      image: "/images/collection-03-grace-brodee.png",
       title: "Grâce Brodée",
       category: "Femme",
       description: "Boubou avec broderies dorées traditionnelles"
     },
     {
       id: 4,
-      image: "/lovable-uploads/86e75c95-946e-4dee-a594-422b3f6342eb.png",
+      image: "/images/collection-04-arc-en-ciel.png",
       title: "Arc-en-ciel",
       category: "Femme",
       description: "Création multicolore exceptionnelle"
     },
     {
       id: 5,
-      image: "/lovable-uploads/b3899c5f-1809-4540-a6bd-33bd58deb85f.png",
+      image: "/images/collection-05-saphir-royal.png",
       title: "Saphir Royal",
       category: "Femme",
       description: "Tenue de soirée en bleu royal"
     },
     {
       id: 6,
-      image: "/lovable-uploads/0e95674e-80ef-4072-ba9b-bf84169f0531.png",
+      image: "/images/collection-06-mystique-bordeaux.png",
       title: "Mystique Bordeaux",
       category: "Femme",
       description: "Élégance en dentelle bordeaux"
     },
     {
       id: 7,
-      image: "/lovable-uploads/8300eaa8-3f8d-4437-9e7e-25403bd4f755.png",
+      image: "/images/collection-07-ocean-vibrant.png",
       title: "Océan Vibrant",
       category: "Femme",
       description: "Robe sirène aux tons océaniques"
     },
     {
       id: 8,
-      image: "/lovable-uploads/03b644d1-58e0-4072-926d-b4da3f7421bd.png",
+      image: "/images/collection-08-foret-emeraude.png",
       title: "Forêt Émeraude",
       category: "Femme",
       description: "Ensemble vert aux motifs dorés"
     },
     {
       id: 9,
-      image: "/lovable-uploads/30229ded-4a78-4004-b006-4a53dcd1e166.png",
+      image: "/images/collection-09-dualite-doree.png",
       title: "Dualité Dorée",
       category: "Femme",
       description: "Mélange harmonieux vert et or"
     },
     {
       id: 10,
-      image: "/lovable-uploads/542ef797-8d48-46e8-b689-bd8bbdb285bb.png",
+      image: "/images/collection-10-terre-afrique.png",
       title: "Terre d'Afrique",
       category: "Femme",
       description: "Ensemble aux motifs terrestres"

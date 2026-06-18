@@ -22,10 +22,10 @@ export const HeroSection = () => {
           {/* Logo/Brand */}
           <div className="mb-8">
             <div className="mb-6 flex justify-center">
-              <img 
-                src="/lovable-uploads/caf986f2-f6bc-4871-b2c0-6128dea3bd82.png"
+              <img
+                src="/images/logo-dionetado.png"
                 alt="Logo DIONETADO"
-                className="h-32 md:h-40 object-contain animate-float filter drop-shadow-2xl"
+                className="h-32 md:h-48 object-contain animate-float drop-shadow-2xl"
               />
             </div>
             <div className="h-1 w-32 bg-gold mx-auto mb-6 animate-pulse"></div>
