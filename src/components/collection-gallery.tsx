@@ -155,20 +155,23 @@ export const CollectionGallery = () => {
   };
 
   const collections: CollectionItem[] = [
-    { id: 1, image: "/images/collection-01-elegance-rose.png", title: "Élégance Rose", category: "Femme", description: "Tenue traditionnelle avec motifs délicats" },
-    { id: 2, image: "/images/collection-02-majeste-coloree.png", title: "Majesté Colorée", category: "Femme", description: "Robe majestueuse aux couleurs vives" },
-    { id: 3, image: "/images/collection-03-grace-brodee.png", title: "Grâce Brodée", category: "Femme", description: "Boubou avec broderies dorées traditionnelles" },
-    { id: 4, image: "/images/collection-04-arc-en-ciel.png", title: "Arc-en-ciel", category: "Femme", description: "Création multicolore exceptionnelle" },
-    { id: 5, image: "/images/collection-05-saphir-royal.png", title: "Saphir Royal", category: "Femme", description: "Tenue de soirée en bleu royal" },
-    { id: 6, image: "/images/collection-06-mystique-bordeaux.png", title: "Mystique Bordeaux", category: "Femme", description: "Élégance en dentelle bordeaux" },
-    { id: 7, image: "/images/collection-07-ocean-vibrant.png", title: "Océan Vibrant", category: "Femme", description: "Robe sirène aux tons océaniques" },
-    { id: 8, image: "/images/collection-08-foret-emeraude.png", title: "Forêt Émeraude", category: "Femme", description: "Ensemble vert aux motifs dorés" },
-    { id: 9, image: "/images/collection-09-dualite-doree.png", title: "Dualité Dorée", category: "Femme", description: "Mélange harmonieux vert et or" },
-    { id: 10, image: "/images/collection-10-terre-afrique.png", title: "Terre d'Afrique", category: "Femme", description: "Ensemble aux motifs terrestres" },
+    { id: 1,  image: "/images/photo-01-boubou-bleu-ciel.jpg",       title: "Boubou Bleu Ciel",        category: "Boubou",   description: "Kaftan brodé de fils dorés, coupe ample et royale" },
+    { id: 2,  image: "/images/photo-02-robe-rose-peplum.jpg",        title: "Rose Peplum",             category: "Robe",     description: "Robe sirène rose à manches bouffantes et basque" },
+    { id: 3,  image: "/images/photo-03-robe-multicolore-dentelle.jpg", title: "Multicolore Dentelle", category: "Robe",     description: "Robe évasée multicolore avec dentelle sur le buste" },
+    { id: 4,  image: "/images/photo-04-robe-arc-en-ciel.jpg",        title: "Arc-en-ciel",             category: "Robe",     description: "Robe arc-en-ciel épaules dénudées aux motifs cachemire" },
+    { id: 5,  image: "/images/photo-05-robe-bleue-royale.jpg",       title: "Bleue Royale",            category: "Robe",     description: "Robe longue bleu électrique avec dentelle et fente" },
+    { id: 6,  image: "/images/photo-06-arc-en-ciel-profil.jpg",      title: "Arc-en-ciel Prestige",   category: "Robe",     description: "Version prestige de notre création arc-en-ciel" },
+    { id: 7,  image: "/images/photo-07-robe-bordeaux-sirene.jpg",    title: "Bordeaux Sirène",         category: "Robe",     description: "Robe sirène en dentelle bordeaux et tissu brodé or" },
+    { id: 8,  image: "/images/photo-08-ensemble-vert-dentelle.jpg",  title: "Vert Dentelle",           category: "Ensemble", description: "Ensemble deux pièces vert foncé aux broderies florales" },
+    { id: 9,  image: "/images/photo-09-ensemble-vert-dore.jpg",      title: "Vert & Or",               category: "Ensemble", description: "Veste verte jacquard feuilles dorées sur jupe or" },
+    { id: 10, image: "/images/photo-10-bordeaux-dentelle-face.jpg",  title: "Bordeaux Élégance",       category: "Robe",     description: "Robe dentelle bordeaux sirène avec traîne majestueuse" },
+    { id: 11, image: "/images/photo-11-ensemble-noir-zebre.jpg",     title: "Noir & Zébré",            category: "Ensemble", description: "Top peplum noir sur jupe imprimé zébré multicolore" },
+    { id: 12, image: "/images/photo-12-robe-marine-dentelle.jpg",    title: "Marine Dentelle",         category: "Robe",     description: "Robe sirène bleu marine avec dentelle argentée" },
+    { id: 13, image: "/images/photo-13-noir-zebre-profil.jpg",       title: "Noir Zébré Prestige",     category: "Ensemble", description: "Silhouette élancée en peplum noir et jupe zébrée" },
   ];
 
-  const row1 = collections;
-  const row2 = [...collections.slice(5), ...collections.slice(0, 5)];
+  const row1 = collections.slice(0, 7);
+  const row2 = collections.slice(6);
 
   return (
     <section
