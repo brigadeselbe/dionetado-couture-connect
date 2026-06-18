@@ -1,4 +1,5 @@
 import { Navbar } from "@/components/navbar";
+import { WhatsAppFab } from "@/components/whatsapp-fab";
 import { HeroSection } from "@/components/hero-section";
 import { ServicesSection } from "@/components/services-section";
 import { CollectionGallery } from "@/components/collection-gallery";
@@ -14,6 +15,7 @@ const Index = () => {
       <CollectionGallery />
       <ContactSection />
       <Footer />
+      <WhatsAppFab />
     </div>
   );
 };
