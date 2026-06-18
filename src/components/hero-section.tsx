@@ -1,4 +1,5 @@
 import { Phone, MapPin, Scissors, Sparkles, ChevronDown } from "lucide-react";
+import { CountUp } from "./count-up";
 
 export const HeroSection = () => {
   return (
@@ -161,7 +162,7 @@ export const HeroSection = () => {
             ].map(({ num, label }, i) => (
               <div key={i} className="text-center">
                 <div className="text-3xl md:text-4xl font-bold mb-1 text-gradient-gold">
-                  {num}
+                  <CountUp value={num} />
                 </div>
                 <div className="text-xs text-white/30 uppercase tracking-widest font-light">
                   {label}

@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { Scissors, Users, ShoppingBag, Palette } from "lucide-react";
 import { Reveal } from "./scroll-reveal";
+import { CountUp } from "./count-up";
 
 interface Service {
   icon: React.ElementType;
@@ -163,7 +164,7 @@ export const ServicesSection = () => {
                 { num: "100%", label: "Fait main" },
               ].map(({ num, label }, i) => (
                 <div key={i}>
-                  <div className="text-4xl font-bold mb-2 text-gradient-gold">{num}</div>
+                  <div className="text-4xl font-bold mb-2 text-gradient-gold"><CountUp value={num} /></div>
                   <p className="text-white/35 text-xs uppercase tracking-widest">{label}</p>
                 </div>
               ))}

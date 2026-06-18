@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import { CollectionModal } from "./collection-modal";
+import { CountUp } from "./count-up";
 
 interface CollectionItem {
   id: number;
@@ -269,7 +270,7 @@ export const CollectionGallery = () => {
             ].map(({ num, label }, i) => (
               <div key={i}>
                 <div className="text-3xl font-bold mb-1 text-gradient-gold">
-                  {num}
+                  <CountUp value={num} />
                 </div>
                 <p className="text-white/28 text-xs uppercase tracking-widest">
                   {label}
