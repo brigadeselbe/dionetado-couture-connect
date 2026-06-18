@@ -167,11 +167,23 @@ export const CollectionGallery = () => {
     { id: 10, image: "/images/photo-10-bordeaux-dentelle-face.jpg",  title: "Bordeaux Élégance",       category: "Robe",     description: "Robe dentelle bordeaux sirène avec traîne majestueuse" },
     { id: 11, image: "/images/photo-11-ensemble-noir-zebre.jpg",     title: "Noir & Zébré",            category: "Ensemble", description: "Top peplum noir sur jupe imprimé zébré multicolore" },
     { id: 12, image: "/images/photo-12-robe-marine-dentelle.jpg",    title: "Marine Dentelle",         category: "Robe",     description: "Robe sirène bleu marine avec dentelle argentée" },
-    { id: 13, image: "/images/photo-13-noir-zebre-profil.jpg",       title: "Noir Zébré Prestige",     category: "Ensemble", description: "Silhouette élancée en peplum noir et jupe zébrée" },
+    { id: 13, image: "/images/photo-13-noir-zebre-profil.jpg",        title: "Noir Zébré Prestige",      category: "Ensemble", description: "Silhouette élancée en peplum noir et jupe zébrée" },
+    { id: 14, image: "/images/photo-14-ensemble-blanc-rose.jpg",      title: "Blanc & Rose",             category: "Ensemble", description: "Haut kaftan blanc brodé sur pantalon rose imprimé" },
+    { id: 15, image: "/images/photo-15-robe-bleue-brodee-01.jpg",     title: "Bleue Brodée",             category: "Robe",     description: "Robe longue bleue avec broderies blanches et gele assorti" },
+    { id: 16, image: "/images/photo-16-robe-bleue-brodee-02.jpg",     title: "Bleue Brodée Prestige",    category: "Robe",     description: "Robe bleue brodée portée avec élégance" },
+    { id: 17, image: "/images/photo-17-tenue-blanche-dentelle-01.jpg", title: "Blanche Dentelle",        category: "Boubou",   description: "Boubou blanc avec dentelle et broderies raffinées" },
+    { id: 18, image: "/images/photo-18-tenue-blanche-dentelle-02.jpg", title: "Blanche Pure",            category: "Boubou",   description: "Tenue blanche immaculée, coupe fluide et féminine" },
+    { id: 19, image: "/images/photo-19-robe-bleue-fleurie-01.jpg",    title: "Bleue Fleurie",            category: "Robe",     description: "Robe bleue marine à motifs floraux cyan et dorés" },
+    { id: 20, image: "/images/photo-20-robe-bleue-fleurie-02.jpg",    title: "Bleue Fleurie Élégance",   category: "Robe",     description: "La même création sous un autre angle magnifique" },
+    { id: 21, image: "/images/photo-21-robe-bleue-fleurie-03.jpg",    title: "Bleue Fleurie Profil",     category: "Robe",     description: "Traîne et fluidité de la robe bleue fleurie" },
+    { id: 22, image: "/images/photo-22-ensemble-bleu-ciel-01.jpg",    title: "Bleu Ciel Dentelle",       category: "Ensemble", description: "Ensemble deux pièces bleu ciel avec dentelle assortie" },
+    { id: 23, image: "/images/photo-23-ensemble-bleu-ciel-02.jpg",    title: "Bleu Ciel Prestige",       category: "Ensemble", description: "La même création dans une pose élégante" },
+    { id: 24, image: "/images/photo-24-ensemble-violet-01.jpg",       title: "Violet Royal",             category: "Ensemble", description: "Ensemble violet avec veste à volants et dentelle" },
+    { id: 25, image: "/images/photo-25-ensemble-violet-02.jpg",       title: "Violet Royal Prestige",    category: "Ensemble", description: "Tenue violette portée avec fierté et élégance" },
   ];
 
-  const row1 = collections.slice(0, 7);
-  const row2 = collections.slice(6);
+  const row1 = collections.filter((_, i) => i % 2 === 0);
+  const row2 = collections.filter((_, i) => i % 2 === 1);
 
   return (
     <section
