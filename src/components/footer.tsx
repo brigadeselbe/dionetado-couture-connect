@@ -1,57 +1,106 @@
-import { Scissors, MapPin, Phone } from "lucide-react";
+import { MapPin, Phone } from "lucide-react";
 
 export const Footer = () => {
   return (
-    <footer className="bg-primary text-primary-foreground py-12">
+    <footer
+      className="py-16 text-white relative overflow-hidden"
+      style={{
+        background:
+          "linear-gradient(180deg, hsl(0 0% 7%) 0%, hsl(0 0% 4%) 100%)",
+      }}
+    >
+      {/* Top accent line */}
+      <div
+        className="absolute top-0 left-0 right-0 h-px pointer-events-none"
+        style={{
+          background:
+            "linear-gradient(to right, transparent, hsl(45 100% 50% / 0.25), transparent)",
+        }}
+      />
+
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-12 mb-12">
+
           {/* Brand */}
-          <div className="text-center md:text-left">
-            <div className="flex items-center justify-center md:justify-start gap-2 mb-4">
-              <Scissors className="w-6 h-6 text-gold" />
-              <h3 className="text-2xl font-bold">DIONETADO</h3>
+          <div>
+            <div className="mb-5">
+              <img
+                src="/images/logo-dionetado.png"
+                alt="DIONETADO"
+                className="h-12 object-contain"
+                style={{
+                  filter:
+                    "drop-shadow(0 0 10px hsl(45 100% 50% / 0.25))",
+                }}
+              />
             </div>
-            <p className="text-primary-foreground/80 mb-4">
-              L'excellence de la couture traditionnelle africaine, 
-              alliant savoir-faire ancestral et créativité moderne.
+            <p className="text-white/35 text-sm leading-relaxed mb-5">
+              L'excellence de la couture traditionnelle africaine, alliant
+              savoir-faire ancestral et créativité moderne.
             </p>
-            <div className="h-1 w-16 bg-gold mx-auto md:mx-0"></div>
+            <div
+              className="h-px w-14"
+              style={{
+                background:
+                  "linear-gradient(to right, hsl(45 100% 50% / 0.5), transparent)",
+              }}
+            />
           </div>
 
-          {/* Contact Info */}
-          <div className="text-center">
-            <h4 className="text-lg font-semibold mb-4 text-gold">Contact</h4>
+          {/* Contact */}
+          <div>
+            <h4 className="text-xs font-bold uppercase tracking-[0.25em] text-gold mb-5">
+              Contact
+            </h4>
             <div className="space-y-3">
-              <div className="flex items-center justify-center gap-2">
-                <MapPin className="w-4 h-4 text-gold" />
-                <span className="text-sm">Liberté 6, Dakar</span>
+              <div className="flex items-center gap-2 text-white/35 text-sm">
+                <MapPin className="w-4 h-4 text-gold/50 flex-shrink-0" />
+                <span>Liberté 6, Dakar, Sénégal</span>
               </div>
-              <div className="flex items-center justify-center gap-2">
-                <Phone className="w-4 h-4 text-gold" />
-                <span className="text-sm">33 864 43 26</span>
+              <div className="flex items-center gap-2 text-white/35 text-sm">
+                <Phone className="w-4 h-4 text-gold/50 flex-shrink-0" />
+                <span>33 864 43 26</span>
               </div>
-              <div className="flex items-center justify-center gap-2">
-                <Phone className="w-4 h-4 text-gold" />
-                <span className="text-sm">77 113 12 82</span>
+              <div className="flex items-center gap-2 text-white/35 text-sm">
+                <Phone className="w-4 h-4 text-gold/50 flex-shrink-0" />
+                <span>77 113 12 82</span>
               </div>
             </div>
           </div>
 
           {/* Services */}
-          <div className="text-center md:text-right">
-            <h4 className="text-lg font-semibold mb-4 text-gold">Nos Services</h4>
-            <div className="space-y-2 text-sm text-primary-foreground/80">
-              <p>Couture Traditionnelle</p>
-              <p>Prêt-à-porter</p>
-              <p>Accessoires</p>
-              <p>Tissus Premium</p>
+          <div>
+            <h4 className="text-xs font-bold uppercase tracking-[0.25em] text-gold mb-5">
+              Nos Services
+            </h4>
+            <div className="space-y-2.5">
+              {[
+                "Couture Traditionnelle",
+                "Prêt-à-porter",
+                "Accessoires",
+                "Tissus Premium",
+              ].map((s) => (
+                <p
+                  key={s}
+                  className="text-white/35 text-sm hover:text-white/60 transition-colors cursor-default"
+                >
+                  {s}
+                </p>
+              ))}
             </div>
           </div>
         </div>
 
-        <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center">
-          <p className="text-sm text-primary-foreground/60">
-            © 2024 DIONETADO - Tous droits réservés | Couture Traditionnelle d'Excellence
+        {/* Bottom bar */}
+        <div
+          className="border-t pt-8 flex flex-col sm:flex-row items-center justify-between gap-3"
+          style={{ borderColor: "rgba(255,255,255,0.05)" }}
+        >
+          <p className="text-white/20 text-xs">
+            © 2024 DIONETADO — Tous droits réservés
+          </p>
+          <p className="text-white/20 text-xs">
+            Couture Traditionnelle d'Excellence · Dakar, Sénégal
           </p>
         </div>
       </div>
