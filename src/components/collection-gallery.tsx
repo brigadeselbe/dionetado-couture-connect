@@ -24,7 +24,7 @@ const Card3D = ({
     const rect = card.getBoundingClientRect();
     const x = (e.clientX - rect.left) / rect.width - 0.5;
     const y = (e.clientY - rect.top) / rect.height - 0.5;
-    card.style.transform = `perspective(1200px) rotateX(${-y * 14}deg) rotateY(${x * 14}deg) translateZ(20px)`;
+    card.style.transform = `perspective(1000px) rotateX(${-y * 14}deg) rotateY(${x * 14}deg) translateZ(20px)`;
     card.style.boxShadow = `${x * -20}px ${y * -20}px 50px rgba(0,0,0,0.5), 0 20px 60px rgba(0,0,0,0.4)`;
     const glare = card.querySelector<HTMLDivElement>("[data-glare]");
     if (glare) {
@@ -37,7 +37,7 @@ const Card3D = ({
     const card = cardRef.current;
     if (!card) return;
     card.style.transform =
-      "perspective(1200px) rotateX(0deg) rotateY(0deg) translateZ(0px)";
+      "perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px)";
     card.style.boxShadow = "0 10px 35px rgba(0,0,0,0.35)";
     const glare = card.querySelector<HTMLDivElement>("[data-glare]");
     if (glare) glare.style.opacity = "0";
@@ -49,8 +49,9 @@ const Card3D = ({
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       onClick={() => onClick(item)}
-      className="cursor-pointer rounded-2xl overflow-hidden relative group"
+      className="cursor-pointer rounded-2xl overflow-hidden relative flex-shrink-0"
       style={{
+        width: "280px",
         transformStyle: "preserve-3d",
         transition: "transform 0.15s ease-out, box-shadow 0.3s ease",
         boxShadow: "0 10px 35px rgba(0,0,0,0.35)",
@@ -63,22 +64,19 @@ const Card3D = ({
         style={{ mixBlendMode: "overlay" }}
       />
 
-      {/* Image */}
-      <div className="relative h-80 overflow-hidden">
+      <div className="relative overflow-hidden" style={{ height: "340px" }}>
         <img
           src={item.image}
           alt={item.title}
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-108"
-          style={{ transition: "transform 0.7s ease" }}
+          className="w-full h-full object-cover"
+          style={{ transition: "transform 0.5s ease" }}
         />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
 
-        {/* Permanent gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-transparent" />
-
-        {/* Category badge */}
-        <div className="absolute top-4 left-4">
+        {/* Badge */}
+        <div className="absolute top-3 left-3">
           <span
-            className="text-xs font-bold px-3 py-1.5 rounded-full"
+            className="text-xs font-bold px-3 py-1 rounded-full"
             style={{
               background:
                 "linear-gradient(135deg, hsl(45 100% 50%), hsl(40 90% 60%))",
@@ -89,34 +87,53 @@ const Card3D = ({
           </span>
         </div>
 
-        {/* View icon */}
-        <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <div
-            className="w-9 h-9 rounded-full flex items-center justify-center"
-            style={{
-              background: "rgba(255,255,255,0.12)",
-              backdropFilter: "blur(10px)",
-              border: "1px solid rgba(255,255,255,0.15)",
-            }}
-          >
-            <span className="text-white text-sm font-bold">↗</span>
-          </div>
-        </div>
-
-        {/* Bottom text */}
-        <div className="absolute bottom-0 left-0 right-0 p-5">
-          <h3 className="font-bold text-lg text-white mb-1 tracking-tight">
+        {/* Text */}
+        <div className="absolute bottom-0 left-0 right-0 p-4">
+          <h3 className="font-bold text-base text-white leading-tight">
             {item.title}
           </h3>
-          <p className="text-white/55 text-sm leading-snug mb-3">
-            {item.description}
-          </p>
-          <div className="flex items-center gap-1 text-xs font-semibold uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          <p className="text-white/50 text-xs mt-1">{item.description}</p>
+          <p className="text-xs font-semibold mt-2 opacity-0 group-hover:opacity-100 transition-opacity"
             style={{ color: "hsl(45 100% 60%)" }}>
-            <span>Voir les détails</span>
-            <span className="text-sm">→</span>
-          </div>
+            Voir →
+          </p>
         </div>
+      </div>
+    </div>
+  );
+};
+
+const MarqueeRow = ({
+  items,
+  direction,
+  speed,
+  onClick,
+}: {
+  items: CollectionItem[];
+  direction: "left" | "right";
+  speed: number;
+  onClick: (item: CollectionItem) => void;
+}) => {
+  const doubled = [...items, ...items];
+
+  return (
+    <div className="overflow-hidden py-3">
+      <div
+        className="flex gap-5"
+        style={{
+          width: "max-content",
+          animation: `marquee-${direction} ${speed}s linear infinite`,
+        }}
+        onMouseEnter={(e) =>
+          (e.currentTarget.style.animationPlayState = "paused")
+        }
+        onMouseLeave={(e) =>
+          (e.currentTarget.style.animationPlayState = "running")
+        }
+      >
+        {doubled.map((item, i) => (
+          <Card3D key={`${direction}-${i}`} item={item} onClick={onClick} />
+        ))}
       </div>
     </div>
   );
@@ -149,6 +166,9 @@ export const CollectionGallery = () => {
     { id: 10, image: "/images/collection-10-terre-afrique.png", title: "Terre d'Afrique", category: "Femme", description: "Ensemble aux motifs terrestres" },
   ];
 
+  const row1 = collections;
+  const row2 = [...collections.slice(5), ...collections.slice(0, 5)];
+
   return (
     <section
       id="nos-creations"
@@ -162,8 +182,7 @@ export const CollectionGallery = () => {
       <div
         className="absolute top-0 right-0 w-[350px] h-[350px] pointer-events-none"
         style={{
-          background:
-            "radial-gradient(circle, hsl(45 100% 50%) 0%, transparent 70%)",
+          background: "radial-gradient(circle, hsl(45 100% 50%) 0%, transparent 70%)",
           filter: "blur(80px)",
           opacity: 0.08,
         }}
@@ -171,16 +190,29 @@ export const CollectionGallery = () => {
       <div
         className="absolute bottom-0 left-0 w-[300px] h-[300px] pointer-events-none"
         style={{
-          background:
-            "radial-gradient(circle, hsl(350 75% 31%) 0%, transparent 70%)",
+          background: "radial-gradient(circle, hsl(350 75% 31%) 0%, transparent 70%)",
           filter: "blur(80px)",
           opacity: 0.1,
         }}
       />
 
-      <div className="container mx-auto px-4">
-        {/* Header */}
-        <div className="text-center mb-16 animate-fade-in">
+      {/* Fade edges */}
+      <div
+        className="absolute inset-y-0 left-0 w-24 z-10 pointer-events-none"
+        style={{
+          background: "linear-gradient(to right, hsl(0 0% 8%), transparent)",
+        }}
+      />
+      <div
+        className="absolute inset-y-0 right-0 w-24 z-10 pointer-events-none"
+        style={{
+          background: "linear-gradient(to left, hsl(0 0% 8%), transparent)",
+        }}
+      />
+
+      {/* Header */}
+      <div className="container mx-auto px-4 mb-14 relative z-20">
+        <div className="text-center animate-fade-in">
           <span className="text-xs font-semibold tracking-[0.3em] uppercase text-gold mb-4 block">
             Notre collection
           </span>
@@ -190,34 +222,30 @@ export const CollectionGallery = () => {
           <div className="flex items-center justify-center gap-3 mb-6">
             <div
               className="h-px w-12"
-              style={{
-                background:
-                  "linear-gradient(to right, transparent, hsl(45 100% 50%))",
-              }}
+              style={{ background: "linear-gradient(to right, transparent, hsl(45 100% 50%))" }}
             />
             <div className="w-1.5 h-1.5 rounded-full bg-gold" />
             <div
               className="h-px w-12"
-              style={{
-                background:
-                  "linear-gradient(to left, transparent, hsl(45 100% 50%))",
-              }}
+              style={{ background: "linear-gradient(to left, transparent, hsl(45 100% 50%))" }}
             />
           </div>
           <p className="text-white/35 max-w-2xl mx-auto leading-relaxed">
-            Découvrez notre collection exclusive de prêt-à-porter traditionnel,
-            où chaque pièce raconte une histoire d'élégance et d'authenticité.
+            Passez votre souris sur une création pour l'explorer en 3D — cliquez pour voir les détails.
           </p>
         </div>
+      </div>
 
-        {/* 3D Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {collections.map((item) => (
-            <Card3D key={item.id} item={item} onClick={handleItemClick} />
-          ))}
-        </div>
+      {/* Marquee rows */}
+      <div className="relative z-0 mb-6">
+        <MarqueeRow items={row1} direction="left" speed={45} onClick={handleItemClick} />
+      </div>
+      <div className="relative z-0 mb-14">
+        <MarqueeRow items={row2} direction="right" speed={38} onClick={handleItemClick} />
+      </div>
 
-        {/* Bottom stats glass panel */}
+      {/* Bottom stats */}
+      <div className="container mx-auto px-4 relative z-20">
         <div
           className="rounded-3xl p-10 text-center"
           style={{
