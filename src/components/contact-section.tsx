@@ -3,6 +3,7 @@ import { MapPin, Phone, Clock, Mail } from "lucide-react";
 export const ContactSection = () => {
   return (
     <section
+      id="contact"
       className="py-28 relative overflow-hidden"
       style={{ background: "hsl(0 0% 97%)" }}
     >
@@ -184,7 +185,7 @@ export const ContactSection = () => {
               Contacter via WhatsApp
             </a>
             <a
-              href="tel:338644326"
+              href="tel:+221338644326"
               className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-semibold text-white/70 transition-all hover:scale-105 hover:text-white"
               style={{
                 background: "rgba(255,255,255,0.06)",

@@ -89,8 +89,8 @@ export const CollectionModal = ({ item, isOpen, onClose }: CollectionModalProps)
                     Contactez-nous pour discuter de vos besoins et obtenir un devis personnalisé.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-3">
-                    <a 
-                      href="tel:338644326" 
+                    <a
+                      href="tel:+221338644326"
                       className="bg-gold text-gold-foreground px-6 py-2 rounded font-semibold hover:bg-gold/90 transition-colors text-center"
                     >
                       33 864 43 26

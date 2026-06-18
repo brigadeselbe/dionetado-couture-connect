@@ -151,6 +151,7 @@ export const CollectionGallery = () => {
 
   return (
     <section
+      id="nos-creations"
       className="py-28 relative overflow-hidden"
       style={{
         background:

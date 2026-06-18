@@ -207,8 +207,9 @@ export const HeroSection = () => {
             className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in"
             style={{ animationDelay: "1s" }}
           >
-            <button
-              className="px-8 py-4 rounded-xl font-semibold text-sm tracking-wide uppercase transition-all duration-300 hover:scale-105"
+            <a
+              href="#nos-creations"
+              className="px-8 py-4 rounded-xl font-semibold text-sm tracking-wide uppercase transition-all duration-300 hover:scale-105 text-center"
               style={{
                 background:
                   "linear-gradient(135deg, hsl(45 100% 50%), hsl(40 85% 60%))",
@@ -218,12 +219,10 @@ export const HeroSection = () => {
               }}
             >
               Découvrir nos créations
-            </button>
+            </a>
             <a
-              href="https://wa.me/221771131282"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-8 py-4 rounded-xl font-semibold text-sm tracking-wide uppercase text-white/70 transition-all duration-300 hover:scale-105 hover:text-white"
+              href="#contact"
+              className="px-8 py-4 rounded-xl font-semibold text-sm tracking-wide uppercase text-white/70 transition-all duration-300 hover:scale-105 hover:text-white text-center"
               style={{
                 background: "rgba(255,255,255,0.05)",
                 border: "1px solid rgba(255,255,255,0.1)",
